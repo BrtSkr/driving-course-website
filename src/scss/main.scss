@@ -23,14 +23,35 @@ html{
 .bullet{
   
 }
-.test::before{ 
+.test{ 
+ 
+}
+.header-button {
+  width: 15vh;
+  height: 5vh;
+  margin: 0 auto;
+  font-size: 2vh;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  .header-arrow {
+  z-index: -2;
+  transition: 0.5s;
+  color: white;
+  font-size: 1.5rem;
   position: absolute;
-  top: .5rem;
-  right: 0;
-  bottom: 0;
-  left: -12rem;
-  font-size: 2rem;
-  color: green;
+  transform:translateY();
+  text-align: center;
+}
+  &:hover{
+    transform: scale(1.1);
+  transition: 0.5s;
+  }
+  &:hover .header-arrow{
+     transform: translateY(3rem) scale(1.5);
+  }
 }
 
 .checked-icon{
@@ -59,14 +80,110 @@ html{
 .remove-text-decoration {
   text-decoration: none !important;
 }
-.custom-underline{
+
+.min-vh-90{
+  min-height: 90vh !important;
+}
+
+.custom-card {
+  position: relative;
+  background: #1d1d1f;
+  min-width: ($spacer * 18);
+  max-width: ($spacer * 22);
+  min-height: ($spacer * 22);
+  box-shadow: 1px 1px 5px 5px green inset;
+  transform: scale(1.05);
+  transform-style: preserve-3d;
+  transition: .5s;
+  z-index: 1;
+  border: 1px solid rgba(131, 131, 131, 0.16);
+  border-radius: 28px !important;
+  box-shadow: $box-shadow;
+  &::before{
+    content: '';
+    position: absolute;
+    //background: $green-gradient;
+    width: 90%;
+    height: 90%;
+    top: 1%;
+    right: 0;
+    bottom: 0;
+    left: 5%;
+    transform: translateZ(-1px);
+    //box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
+    filter: blur(20px);
+  }
+  &:nth-child(1)::after{
+    background: $green-gradient;
+    height: 2rem;
+    max-width: 5.5rem;
+    font-family: $font-family-base;
+    content: 'Best choice';
+    color: $black;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 15px 0;
+    box-shadow: 5px 5px 5px 5px  rgba(0, 0, 0, 0.315);
+  z-index: -1;
+  }
+  &:nth-child(1)::before{
+        content: '';
+    position: absolute;
+    background: $green-gradient;
+    width: 90%;
+    height: 90%;
+    top: 1%;
+    right: 0;
+    bottom: 0;
+    left: 5%;
+    transform: translateZ(-1px);
+    //box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
+    filter: blur(20px);
+  }
+  &:nth-child(2)::before{
+    content: '';
+    position: absolute;
+   // background: $orange-gradient;
+    width: 90%;
+    height: 90%;
+    top: 1%;
+    right: 0;
+    bottom: 0;
+    left: 5%;
+    transform: translateZ(-1px);
+    //box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
+    filter: blur(20px);
+  }
+  &:nth-child(3)::before{
+    content: '';
+    position: absolute;
+  //  background: $blue-gradient;
+    width: 90%;
+    height: 90%;
+    top: 1%;
+    right: 0;
+    bottom: 0;
+    left: 5%;
+    transform: translateZ(-1px);
+    //box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
+    filter: blur(20px);
+  }
+  &:hover{
+    transform: scale(1.1) translateY(-2rem);
+    transition: .5s;
+  }
+  .custom-underline{
   position: relative;
   margin: -1rem 0 0 0;
   &::before{
     content: '';
     position: absolute;
-    background: $sub-gradient;
-    height: 6rem;
+    background: $green-gradient;
+    height: 5rem;
     top: 0;
     right: 0;
     bottom: 0;
@@ -75,71 +192,8 @@ html{
     clip-path: polygon(21% 14%, 81% 14%, 100% 0, 100% 10%, 80% 23%, 21% 23%, 0 10%, 0 0);
   }
 }
-.custom-card {
-  position: relative;
-  background: #1d1d1f;
-  min-width: ($spacer * 20);
-  max-width: ($spacer * 20);
-  min-height: ($spacer * 25);
-  margin: auto;
-  box-shadow: 1px 1px 5px 5px green inset;
-  transform-style: preserve-3d;
-  z-index: 1;
-  &::before{
-    content: '';
-    position: absolute;
-    background: $green-gradient;
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    right: 0;
-    bottom: 0;
-    left: -5%;
-    transform: translateZ(-1px);
-    box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
-  }
-  &:nth-child(1)::before{
-        content: '';
-    position: absolute;
-    background: $sub-gradient;
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    right: 0;
-    bottom: 0;
-    left: -5%;
-    transform: translateZ(-1px);
-    box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
-  }
-  &:nth-child(2)::before{
-    content: '';
-    position: absolute;
-    background: $orange-gradient;
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    right: 0;
-    bottom: 0;
-    left: -5%;
-    transform: translateZ(-1px);
-    box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
-  }
-  &:nth-child(3)::before{
-    content: '';
-    position: absolute;
-    background: $blue-gradient;
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    right: 0;
-    bottom: 0;
-    left: -5%;
-    transform: translateZ(-1px);
-    box-shadow: inset 0 0 10px 12px $black, inset 0 0 30px 2px $black;
-  }
   .separator{
-    border-bottom: 2px solid rgb(255, 255, 255);
-    border-radius: 10px;
+    border-bottom: 2px solid $green;
     padding: 0 0 1rem 0;
   }
 }
@@ -151,30 +205,34 @@ html{
     background: #1d1d1f;
   min-height: ($spacer * 40);
   z-index: 3 ;
+  overflow: hidden;
   &:before {
     background: $black url("../images/undraw_city_driver_re_0x5e.svg")
       no-repeat;
-    background-size: 80rem;
-    background-position: 0%;
+    background-size: 100rem;
+    background-position: 25%;
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: .3;
+    opacity: .1;
    z-index: -1 ;
     filter: saturate(2) blur(3px);
-    
+    animation: carImage 2.5s;
+    animation-direction: alternate;
   }
   .welcome-text {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     margin: auto;
     z-index: 2 ;
-    mix-blend-mode: difference;
+   animation: header-text-animation 1s;
+   animation-timing-function: ease;
   }
   .welcome-subtext {
-      mix-blend-mode: difference;
+      animation: header-text-animation 1s;
+      animation-timing-function: ease;
   }
 }
 .navbar-main {
@@ -231,4 +289,32 @@ html{
 ::-webkit-scrollbar-thumb {
   background: $red;
   border-radius: 30px 0 0 30px;
+}
+
+@keyframes carImage {
+  from{
+  background-position: -200%;
+  }
+  to{
+    background-position: 25%;
+    
+  }
+}
+@keyframes header-text-animation {
+  from{
+  transform: translateY(-100rem);
+  }
+  to{
+   transform: translateY(0);
+  }
+}
+@keyframes header-button {
+  from{
+    opacity: 0;
+    transform: translateY(100rem);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
