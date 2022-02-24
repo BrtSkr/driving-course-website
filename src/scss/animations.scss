@@ -1,0 +1,27 @@
+@keyframes carImage {
+  from{
+  background-position: -200%;
+  }
+  to{
+    background-position: 25%;
+    
+  }
+}
+@keyframes header-text-animation {
+  from{
+  transform: translateY(-100rem);
+  }
+  to{
+   transform: translateY(0);
+  }
+}
+@keyframes header-button {
+  from{
+    opacity: 0;
+    transform: translateY(100rem);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

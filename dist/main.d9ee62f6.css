@@ -12823,12 +12823,52 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.bg-black {
-  background: #000;
+@keyframes carImage {
+  from {
+    background-position: -200%;
+  }
+  to {
+    background-position: 25%;
+  }
+}
+@keyframes header-text-animation {
+  from {
+    transform: translateY(-100rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes header-button {
+  from {
+    opacity: 0;
+    transform: translateY(100rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+* {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  background: #212529;
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc3545;
+  border-radius: 30px 0 0 30px;
+}
+
+.bg-black {
+  background: #000;
 }
 
 .reset-all-padding {
@@ -13098,41 +13138,42 @@ html {
   opacity: 1;
 }
 
-::-webkit-scrollbar {
-  background: #212529;
-  width: 0.4rem;
+.about-us {
+  min-height: 60rem;
+}
+.about-us .company-information {
+  width: 90%;
+}
+.about-us .company-information .company-description {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  min-height: 25rem;
+}
+.about-us .company-information .company-description .company-text {
+  display: flex;
+  align-items: center;
+  background: #1d1d1f;
+  min-height: 25rem;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 1.5rem;
+}
+.about-us .company-information .company-description .company-stats .stat {
+  min-width: 20rem;
+  min-height: 10rem;
+  margin: auto;
+  font-size: 3rem;
+  background: #1d1d1f;
+  border-radius: 30px;
+}
+.about-us .company-information .company-description .company-stats .stat p {
+  transform: translateY(3rem);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #dc3545;
-  border-radius: 30px 0 0 30px;
-}
-
-@keyframes carImage {
-  from {
-    background-position: -200%;
-  }
-  to {
-    background-position: 25%;
-  }
-}
-@keyframes header-text-animation {
-  from {
-    transform: translateY(-100rem);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-@keyframes header-button {
-  from {
-    opacity: 0;
-    transform: translateY(100rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.text-center-force {
+  text-align: center !important;
 }
 
 /*# sourceMappingURL=/main.d9ee62f6.css.map */
