@@ -12891,6 +12891,9 @@ html {
   background-color: white;
   border: none;
   border-radius: 5px;
+  animation: header-button;
+  animation-delay: 1s;
+  animation-duration: 1s;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -12949,7 +12952,11 @@ html {
   min-height: 90vh !important;
 }
 
-.custom-card {
+.card-wrapper {
+  min-width: 20rem;
+  max-width: 70%;
+}
+.card-wrapper .custom-card {
   position: relative;
   background: #1d1d1f;
   min-width: 18rem;
@@ -12964,7 +12971,7 @@ html {
   border-radius: 28px !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
-.custom-card::before {
+.card-wrapper .custom-card::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -12976,7 +12983,7 @@ html {
   transform: translateZ(-1px);
   filter: blur(20px);
 }
-.custom-card:nth-child(1)::after {
+.card-wrapper .custom-card:nth-child(1)::after {
   background: linear-gradient(225deg, #5af141, #2a9dce);
   height: 2rem;
   max-width: 5.5rem;
@@ -12993,7 +13000,7 @@ html {
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.315);
   z-index: -1;
 }
-.custom-card:nth-child(1)::before {
+.card-wrapper .custom-card:nth-child(1)::before {
   content: "";
   position: absolute;
   background: linear-gradient(225deg, #5af141, #2a9dce);
@@ -13006,7 +13013,7 @@ html {
   transform: translateZ(-1px);
   filter: blur(20px);
 }
-.custom-card:nth-child(2)::before {
+.card-wrapper .custom-card:nth-child(2)::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -13018,7 +13025,7 @@ html {
   transform: translateZ(-1px);
   filter: blur(20px);
 }
-.custom-card:nth-child(3)::before {
+.card-wrapper .custom-card:nth-child(3)::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -13030,15 +13037,15 @@ html {
   transform: translateZ(-1px);
   filter: blur(20px);
 }
-.custom-card:hover {
+.card-wrapper .custom-card:hover {
   transform: scale(1.1) translateY(-2rem);
   transition: 0.5s;
 }
-.custom-card .custom-underline {
+.card-wrapper .custom-card .custom-underline {
   position: relative;
   margin: -1rem 0 0 0;
 }
-.custom-card .custom-underline::before {
+.card-wrapper .custom-card .custom-underline::before {
   content: "";
   position: absolute;
   background: linear-gradient(225deg, #5af141, #2a9dce);
@@ -13050,9 +13057,10 @@ html {
   margin: 2.3rem 0 0 0;
   clip-path: polygon(21% 14%, 81% 14%, 100% 0, 100% 10%, 80% 23%, 21% 23%, 0 10%, 0 0);
 }
-.custom-card .separator {
+.card-wrapper .custom-card .separator {
+  font-size: 1.2rem;
   border-bottom: 2px solid #198754;
-  padding: 0 0 1rem 0;
+  padding: 0 0 0rem 0;
 }
 
 .green-gradient {
@@ -13114,12 +13122,10 @@ html {
   padding: 0 3rem;
   z-index: 999;
 }
-
-.navbar-name {
+.navbar-main .navbar-name {
   margin-right: auto;
 }
-
-.nav-button {
+.navbar-main .nav-button {
   font-size: 1.5rem;
   color: white;
   background-color: transparent;
@@ -13130,8 +13136,12 @@ html {
   transition: 0.5s;
   opacity: 0.6;
 }
+.navbar-main .nav-button:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 1;
+}
 
-.nav-button:hover,
 .nav-close:hover {
   cursor: pointer;
   transition: 0.5s;
@@ -13139,7 +13149,7 @@ html {
 }
 
 .about-us {
-  min-height: 60rem;
+  min-height: 50rem;
 }
 .about-us .company-information {
   width: 90%;
@@ -13172,8 +13182,51 @@ html {
   transform: translateY(3rem);
 }
 
+.inventory {
+  min-height: 60rem;
+  background: #000;
+}
+.inventory header {
+  margin-left: 10rem;
+}
+.inventory header .inv-text {
+  font-size: 12rem;
+  padding: 0;
+  background: linear-gradient(340deg, #ca5660 70%, white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.inventory header .subtext {
+  font-size: 7rem;
+  padding: 0;
+  margin: -9rem 0 0 5rem;
+  background: linear-gradient(335deg, white 0%, white 64%, #ca5660 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.inventory .img-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.inventory .img-holder img {
+  max-width: 25rem;
+  margin: auto;
+}
+
 .text-center-force {
   text-align: center !important;
+}
+
+@media screen and (max-width: 960px) {
+  .company-description {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+  }
+  .company-description .company-stats .stat {
+    min-width: 18rem !important;
+  }
 }
 
 /*# sourceMappingURL=/main.d9ee62f6.css.map */
