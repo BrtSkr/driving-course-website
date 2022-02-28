@@ -32,9 +32,6 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
   text-align: left !important;
 }
 
-.test {
-}
-
 .checked-icon {
   font-size: 2rem;
   color: $green;
@@ -83,7 +80,7 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
   min-height: ($spacer * 40);
   z-index: 3;
   overflow: hidden;
-  a{
+  a {
     text-decoration: none;
   }
   &:before {
@@ -410,8 +407,6 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
         border-radius: 30px;
         font-size: 1.5rem;
         border: $border-custom;
-        p {
-        }
       }
 
       .company-stats {
@@ -423,8 +418,24 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
           background: $darker;
           border-radius: 30px;
           border: $border-custom;
+          overflow: hidden;
+            >div{
+              position: relative;
+          
+              transform: translateY(-.5rem);
+            }
           p {
-            transform: translateY(3rem);
+            background: rgb(255, 255, 255);
+            background: linear-gradient(
+              295deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(153, 170, 255, 1) 37%,
+              rgba(193, 110, 200, 1) 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            //transform: translateY(3rem);
           }
         }
       }
@@ -486,7 +497,20 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
 .text-center-force {
   text-align: center !important;
 }
-
+.text-3{
+margin: -3rem 0 0 0;
+font-size: 1.5rem;
+color: rgb(189, 189, 189);
+font-weight: 300;
+transform: translateY(-.5rem);
+}
+.text-2{
+  font-size: 6rem;
+}
+.text-1 {
+  font-size: 2.3rem;
+  margin: 3.5rem 0 0 0;
+}
 @media screen and (max-width: 960px) {
   .company-description {
     display: flex !important;
@@ -514,14 +538,13 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
     > h1 {
       font-size: 6rem;
       &::before {
-        margin: 3.2rem 0 0 7.5rem !important;
+        margin: 8rem 0 0 7.5rem !important;
       }
     }
   }
   .offer {
-  > h1 {
-    font-size: 4rem;
-
+    > h1 {
+      font-size: 4rem;
+    }
   }
- }
 }
