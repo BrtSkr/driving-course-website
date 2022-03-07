@@ -73,7 +73,10 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
 .green-gradient {
   box-shadow: 1px 1px 5px 5px $green-gradient;
 }
+.max-w{
+  flex-basis: 70%;
 
+}
 .welcome-section {
   position: relative;
   background: $darker;
@@ -113,8 +116,8 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
     animation-timing-function: ease;
   }
   .header-button {
-    width: 15vh;
-    height: 5vh;
+    width: 10rem;
+    height: 2.5rem;
     margin: 0 auto;
     font-size: 2vh;
     background-color: white;
@@ -146,7 +149,10 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
     }
   }
 }
-
+.custom-translate {
+  transform: translateY(0rem) !important;
+  transition: 0.5s;
+}
 .navbar-main {
   top: 0;
   position: sticky;
@@ -191,7 +197,61 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
     }
   }
 }
-
+.navbar-mobile {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.781);
+  font-smooth: antialiased;
+  backdrop-filter: saturate(180%) blur(20px);
+  top: 0;
+  position: sticky;
+  height: 5rem;
+  z-index: 999;
+  .nav-btn {
+    position: relative;
+    background-color: rgba(44, 44, 44, 0.781);
+    color: white;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    border-radius: 1vh;
+    font-size: 2rem;
+    margin: 1rem 1rem;
+  }
+  .nav-slide {
+    background-color: rgb(0, 0, 0);
+    font-smooth: antialiased;
+    z-index: 1000;
+    min-height: 100vh;
+    min-width: 10rem;
+    transform: translateY(100rem);
+    transition: 0.5s;
+    .navm-close {
+      background: none;
+      outline: none;
+      border: none;
+      height: 4rem;
+      width: 4rem;
+      font-size: 2.5rem;
+      color: gray !important;
+      &:hover {
+        transition: 0.5s;
+        color: white !important;
+      }
+    }
+    .navm-anchors {
+      margin: 10rem 0 0 0;
+      font-size: 1.5rem;
+      a {
+        color: gray !important;
+        transition: 0.5s;
+        &:hover {
+          transition: 0.5s;
+          color: white !important;
+        }
+      }
+    }
+  }
+}
 .nav-close:hover {
   cursor: pointer;
   transition: 0.5s;
@@ -413,17 +473,17 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
         .stat {
           min-width: 20rem;
           min-height: 10rem;
-          margin: auto;
+          margin: autoz;
           font-size: 3rem;
           background: $darker;
           border-radius: 30px;
           border: $border-custom;
           overflow: hidden;
-            >div{
-              position: relative;
-          
-              transform: translateY(-.5rem);
-            }
+          > div {
+            position: relative;
+
+            transform: translateY(-0.5rem);
+          }
           p {
             background: rgb(255, 255, 255);
             background: linear-gradient(
@@ -497,19 +557,27 @@ $border-custom: 0.1vh solid rgba(131, 131, 131, 0.16);
 .text-center-force {
   text-align: center !important;
 }
-.text-3{
-margin: -3rem 0 0 0;
-font-size: 1.5rem;
-color: rgb(189, 189, 189);
-font-weight: 300;
-transform: translateY(-.5rem);
+.text-3 {
+  margin: -3rem 0 0 0;
+  font-size: 1.5rem;
+  color: rgb(189, 189, 189);
+  font-weight: 300;
+  transform: translateY(-0.5rem);
 }
-.text-2{
+.text-2 {
   font-size: 6rem;
 }
 .text-1 {
   font-size: 2.3rem;
   margin: 3.5rem 0 0 0;
+}
+@media screen and (max-width: 1048px) {
+  .navbar-main {
+    display: none;
+  }
+  .navbar-mobile {
+    display: block;
+  }
 }
 @media screen and (max-width: 960px) {
   .company-description {

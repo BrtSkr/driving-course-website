@@ -33,6 +33,26 @@
           </button></a>
       </div>
     </nav>
+    
+    <nav class="navbar-mobile">
+    <div class="nav-slide position-fixed text-center">
+       <button class="navm-close d-flex justify-content-center m-auto mt-4 text-white"><i class="bi bi-x"></i></button>
+       <div class="navm-anchors d-flex flex-column gap-4">
+         <a href="#home" class="d-block remove-text-decoration">Home</a>
+         <a href="#offer" class="d-block remove-text-decoration">Courses</a>
+         <a href="#about-anchor" class="d-block remove-text-decoration">About</a>
+         <a href="#inventory-anchor" class="d-block remove-text-decoration">Equipment</a>
+         <a href="#contact" class="d-block remove-text-decoration">Contact</a>
+       </div>
+     </div>
+    
+     <button class="nav-btn"><i class="bi bi-list"></i></button>
+     <h2 class="d-inline-block text-white">
+       Course with class
+     </h2>
+
+    </nav>     
+
     <header id="home" class="welcome-section min-vh-90 d-flex justify-content-center">
       <div class="m-auto position-relative">
         <h1 class="text-white text-center m-auto welcome-text">
@@ -57,7 +77,7 @@
       <h1 id='courses-anchor' class="text-white bg-black pb-5 ">Courses</h1>
       <div class="d-flex flex-wrap flex-row gap-5 mx-auto card-wrapper">
         <div class="custom-card text-white m-auto rounded shadow-lg rounded py-4 green-gradient">
-          <h1 class="custom-underline mb-4">Default</h1>
+          <h1 class="custom-underline mb-4" data-name>Default</h1>
           <h3 class="separator text-left-force">What you receive</h3>
           <div class="d-flex justify-content-center">
             <i class="bi bi-check2 checked-icon"></i>
@@ -83,10 +103,10 @@
               learning materials
             </h6>
           </div>
-          <h2 class="pt-3">200$</h2>
+          <h2 class="pt-3" data-price>200$</h2>
         </div>
         <div class="custom-card text-white m-auto rounded shadow-lg rounded py-4 green-gradient">
-          <h1 class="custom-underline mb-4">Default</h1>
+          <h1 class="custom-underline mb-4" data-name>Default</h1>
 
           <h3 class="separator text-left-force">What you receive</h3>
           <div class="d-flex justify-content-center">
@@ -113,10 +133,10 @@
               learning materials
             </h6>
           </div>
-          <h2 class="pt-3">200$</h2>
+          <h2 class="pt-3" data-price>200$</h2>
         </div>
         <div class="custom-card text-white m-auto rounded shadow-lg rounded py-4 green-gradient">
-          <h1 class="custom-underline mb-4">Default</h1>
+          <h1 class="custom-underline mb-4" data-name>Default</h1>
 
           <h3 class="separator text-left-force">What you receive</h3>
           <div class="d-flex justify-content-center">
@@ -143,10 +163,10 @@
               learning materials
             </h6>
           </div>
-          <h2 class="pt-3">200$</h2>
+          <h2 class="pt-3" data-price>200$</h2>
         </div>
         <div class="custom-card text-white m-auto rounded shadow-lg rounded py-4 green-gradient">
-          <h1 class="custom-underline mb-4">Default</h1>
+          <h1 class="custom-underline mb-4" data-name>Default</h1>
 
           <h3 class="separator text-left-force">What you receive</h3>
           <div class="d-flex justify-content-center">
@@ -173,7 +193,8 @@
               learning materials
             </h6>
           </div>
-          <h2 class="pt-3">200$</h2>
+          
+          <h2 class="pt-3" data-price>200$</h2>
         </div>
       </div>
     </section>
@@ -195,18 +216,24 @@
                 </div>
                 <h6 class="text-3">of experience</h6>
               </div>
-              <div class="stat col">
-                <p>s</p>
+              <div class="stat col d-flex flex-column justify-content-center">
+                <div class="d-flex flex-row justify-content-center">
+                  <p class="text-2">200</p>
+                  <p class="text-1">+</p>
+                </div>
+                <h6 class="text-3">satisfied customers</h6>
               </div>
             </div>
 
             <div class="row gap-3 mt-3">
-              <div class="stat col">
-                <p>s</p>
+              <div class="stat col d-flex flex-column justify-content-center">
+                <div class="d-flex flex-row justify-content-center">
+                  <p class="text-2">4.3/5</p>
+                  <p class="text-1"></p>
+                </div>
+                <h6 class="text-3">rating from reviews</h6>
               </div>
-              <div class="stat col">
-                <p>s</p>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -219,7 +246,7 @@
         <p id="inventory-anchor" class="text-white text-left inv-text">Our</p>
         <p class="text-white text-left subtext">Inventory</p>
       </header>
-      <div class="img-holder">
+      <div class="img-holder pb-5">
         <img src="src/images/undraw_town_r-6-pc.svg" alt="car1">
         <img src="src/images/undraw_town_r-6-pc.svg" alt="car2">
         <img src="src/images/undraw_town_r-6-pc.svg" alt="car3">
@@ -228,18 +255,17 @@
     </section>
     <footer  class="bg-dark">
     <div id='contact' class="container text-white m-auto w-75">
-      <div class="d-flex flex-wrap flex-row justify-content-evenly">
-        <div class="contact d-flex flex-column flex-wrap text-left justify-content-center">
-        <h2>Contact</h2>
-        <p><i class="bi bi-telephone"></i> 48+ 123 456 788</p>
-        <p><i class="bi bi-envelope"></i> Email@gmail.com</p>
-        <p><i class="bi bi-geo-alt-fill"></i> Location</p>
+      <div class="d-flex flex-wrap flex-row justify-content-evenly gap-4 pt-5">
+        <div class="contact d-flex flex-column flex-wrap text-left justify-content-center max-w">
+        <h2>Why us?</h2>
+        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius hic officia suscipit facilis sapiente dolor dolorum fuga reiciendis labore dolores doloremque, aperiam ullam officiis temporibus nisi magnam, optio possimus nostrum?</p>
         </div>
         <div class="contact d-flex flex-column flex-wrap text-left justify-content-center">
         <h2>Contact</h2>
         <p><i class="bi bi-telephone"></i> 48+ 123 456 788</p>
-        <p><i class="bi bi-envelope"></i> Email@gmail.com</p>
+        <p><i class="bi bi-at"></i></i> Email@gmail.com</p>
         <p><i class="bi bi-geo-alt-fill"></i> Location</p>
+        <p><i class="bi bi-globe2"></i> <a href="https://website.com" class="remove-text-decoration text-white">www.coursewithclass.com</a></p>
         </div>
       </div>
     </div>
